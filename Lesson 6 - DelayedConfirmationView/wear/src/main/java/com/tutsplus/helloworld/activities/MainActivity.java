@@ -1,6 +1,7 @@
-package com.tutsplus.helloworld;
+package com.tutsplus.helloworld.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
 import android.support.wearable.view.WearableListView;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.tutsplus.helloworld.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,7 +38,14 @@ public class MainActivity extends Activity implements WearableListView.ClickList
 
     @Override
     public void onClick(WearableListView.ViewHolder viewHolder) {
-        Toast.makeText( this, ( (TextView) viewHolder.itemView.findViewById( R.id.text )).getText(), Toast.LENGTH_SHORT ).show();
+        String title = ( (TextView) viewHolder.itemView.findViewById( R.id.text )).getText().toString();
+
+        Toast.makeText( this, title, Toast.LENGTH_SHORT ).show();
+
+        if( getString( R.string.delayed_confirmation_view_activity ).equalsIgnoreCase( title ) ) {
+            Intent intent = new Intent( this, DelayedConfirmationViewActivity.class );
+            startActivity( intent );
+        }
     }
 
     @Override
