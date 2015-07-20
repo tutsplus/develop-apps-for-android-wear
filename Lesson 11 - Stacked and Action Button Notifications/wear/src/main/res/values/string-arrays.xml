@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="list_items">
+        <item>@string/delayed_confirmation_view_activity</item>
+        <item>@string/grid_view_pager_activity</item>
+
+        <item>@string/notification_basic</item>
+        <item>@string/notification_multipage</item>
+        <item>@string/notification_stacked</item>
+        <item>@string/notification_action</item>
+        <item>@string/notification_reply</item>
+        <item>@string/notification_custom_screen</item>
+    </string-array>
+
+</resources>
